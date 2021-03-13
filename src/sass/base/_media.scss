@@ -49,6 +49,9 @@
 }
 
 @media (max-width: 576px) {
+    .title {
+        font-size: 27px;
+    }
     .header {
         flex-direction: column;
         &__contacts {
@@ -75,9 +78,6 @@
         }
     }
     .advantage {
-        &__header {
-            font-size: 27px;
-        }
         &__icons {
             margin-top: 10px;
             flex-direction: column;
