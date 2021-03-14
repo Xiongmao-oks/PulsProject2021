@@ -75,6 +75,12 @@
             margin-top: 38px;
         }
     }
+    .comment {
+        padding: 0 15px 71px 15px;
+        &__text {
+            margin-left: 40px;
+        }
+    }
 }
 
 @media (max-width: 576px) {
@@ -145,6 +151,14 @@
     .consultation {
         &__descr {
             font-size: 18px;
+        }
+    }
+    .comment {
+        &__img {
+            display: none;
+        }
+        &__text {
+            margin-left: 0;
         }
     }
 }
