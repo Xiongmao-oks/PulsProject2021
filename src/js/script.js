@@ -56,4 +56,20 @@ $(document).ready(function(){
         toggleSlide('.catalog-item__back');
 
 
+//Модальные окна 
+        $('[data-modal=consultation]').on('click', function() {
+            $('.overlay, #consultation').fadeIn('slow');
+        });
+        $('.modal__close').on('click', function() {
+            $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
+        });
+
+//Текст в модальном окне будет меняться в зависимости от выбранного товара на странице
+        $('.button_mini').each(function(i) {
+            $(this).on('click', function() {
+                $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+                $('.overlay, #order').fadeIn('slow');
+            })
+        })
+
   });

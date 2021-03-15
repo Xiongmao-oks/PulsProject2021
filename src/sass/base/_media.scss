@@ -161,4 +161,28 @@
             margin-left: 0;
         }
     }
+    .footer {
+        &__info {
+            width: 320px;
+            height: 235px;
+            padding: 40px 10px 20px 10px;
+        }
+        &__addr {
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 14px;
+        }
+    }
+    .modal {
+        width: 290px;
+        &__close {
+            right: 5px;
+            top: 5px;
+
+        }
+    }
+    .feed-form {
+        padding: 0 15px 0 15px;
+        width: 100%;
+    }
 }
