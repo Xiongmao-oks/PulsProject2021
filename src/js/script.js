@@ -72,4 +72,38 @@ $(document).ready(function(){
             })
         })
 
+//Валидация форм
+        function validateForms(form) {
+            $(form).validate({
+                rules: {
+                    name: "required",
+                    phone: {
+                        required: true,
+                        minlength: 11
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    name: "Пожалуйста, введи своё имя",
+                    phone: {
+                        required: "Пожалуйста, введи контактный номер телефона",
+                        minlength: jQuery.validator.format("Минимальное количество символов {0}")
+                    },
+                    email: {
+                      required: "Пожалуйста, введи Ваш email",
+                      email: "Неправильно введен email. Пожалуйста, введите в формате name@domain.com"
+                    }
+                  }
+            });
+        };
+        validateForms('#consultation-form');
+        validateForms('#order form');
+        validateForms('#consultation form');
+
+//Маска ввода номера телефона на сайте
+        $('input[name=phone]').mask("+7 (999) 999-99-99");
+
   });
