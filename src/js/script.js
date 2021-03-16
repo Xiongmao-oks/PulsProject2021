@@ -70,7 +70,7 @@ $(document).ready(function(){
                 $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
                 $('.overlay, #order').fadeIn('slow');
             })
-        })
+        });
 
 //Валидация форм
         function validateForms(form) {
@@ -104,6 +104,5 @@ $(document).ready(function(){
         validateForms('#consultation form');
 
 //Маска ввода номера телефона на сайте
-        $('input[name=phone]').mask("+7 (999) 999-99-99");
 
   });
