@@ -104,5 +104,23 @@ $(document).ready(function(){
         validateForms('#consultation form');
 
 //Маска ввода номера телефона на сайте
-        $('input[name=phone]').mask("+7 (999) 999-99-99");
-  });
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
+
+//Отправка писем с сайта
+    $('form').submit(function(e) {
+        e.preventDefault(); //отменяет стандартное поведение браузера
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+
+            $('form').trigger('reset'); //все формы очищаются
+        });
+        return false;
+    });
+
+});
